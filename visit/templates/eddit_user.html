@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tadd user</title>
+</head>
+<body>
+<form method="get">
+    {% csrf_token %}
+    User: <strong>{{user}}</strong><br>
+    email: {{email}}<br>
+    <br>
+</form>
+<br>
+<br>
+ <form action="/updated/{{id}}" , method="post" >
+        {% csrf_token %}
+        NEW Username : <input type="text" name="user"><br>
+        New email : <input type="email" name="email"><br>
+        <input type="submit" >
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<ul>
+    {% for visit in object_list %}
+    <li>
+        <p>
+            <form action="/edit_user/{{visit.id}}" method="post" name="id" >
+             {% csrf_token %}
+            USER ID : {{id}}
+            ID: <strong>{{visit.id}} </strong><br>
+            Username: <strong>{{visit.user}}</strong><br>
+            email: {{visit.email}}<br>
+            Eddit: <input type="submit" value=user name="id" >
+
+            </form>
+        <form action="delit_user/{{visit.id}}" method="post" name="id">
+            {% csrf_token %}
+            delite: <input type="submit" value=user name="id" >
+        </form>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+    <form action="/add_user">
+        <input type="submit" , value="Add User">
+    </form>
+
+</body>
+</html>
